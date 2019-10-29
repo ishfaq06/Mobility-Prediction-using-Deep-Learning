@@ -8,11 +8,7 @@ A=1:length(data);
 frac=0.3;
 mon=6;
 len=length(data);
-
-
 %idx=randperm(numel(A));
-
-
 %s1=A(idx(1:frac*length(data)));
 test_data=data(month_change(mon)+1:month_change(mon+1),:);
 %test_data=data(s1,:);
@@ -29,11 +25,7 @@ k=1;
 for i=1:11
     test_data_output([k,k+1],:)=test_data_output_temp2([i,11+i],:);
     k=k+2;
-    
-    
 end
-
-
 
 %
 %subSet2=A(idx(frac*length(data)+1:end));
@@ -59,9 +51,6 @@ for i=1:11
     
     
 end
-
-
-% training the irish data set
 
 %input_data=(data(:,2:2:12))';
 %output_data=(data(:,15))';
@@ -112,8 +101,6 @@ softnet = trainSoftmaxLayer(feat2,training_data_target,'MaxEpochs',500);
 %view(softnet)
 %
 deepnet = stack(autoenc1,autoenc2,softnet);
-
-
 
 %
 deepnet = train(deepnet,training_data_input,training_data_target);
@@ -219,8 +206,6 @@ for i=1:11
     
 end
 
-
-
 %
 %subSet2=A(idx(frac*length(data)+1:end));
 %s2=sort(subSet2);
@@ -247,6 +232,3 @@ for i=1:11
     
     
 end
-
-
-
